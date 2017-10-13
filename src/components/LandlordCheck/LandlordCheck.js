@@ -3,12 +3,19 @@ import { connect } from 'react-redux'
 import {getUserInfo, setUser} from './../../ducks/reducer.js'
 
 class LandlordCheck extends Component {
-    
-
 
 componentDidMount(){
+    
    this.props.getUserInfo()
    
+}
+
+componentWillReceiveProps(newProps){
+    if (newProps.user.status === 'Landlord'){
+        this.props.history.push('/l/dashboard')
+    } else if (newProps.user.status === 'Tenant'){
+        this.props.history.push('/t/dashboard')
+    }
 }
 
 render(){
@@ -24,9 +31,9 @@ render(){
 }
 
 function mapStateToProps(state){
-    console.log(3, state)
     return {
-        user: state.user
+        user: state.user,
+        newUser: state.newUser
     }
 }
 

@@ -11,16 +11,19 @@ module.exports = {
     setUser: (req, res, next) => {
         const db = req.app.get('db');  
         const { id, type } = req.params
+        console.log(req.params, id, type)
         db.set_user([id,type])
-        .then((res) => res.status(200).send(res))
+        .then((data) => {
+            res.status(200).send(data)
+        })
         .catch((err) => res.status(500).send(err))
     },
 
     addProperty: (req, res, next) => {
         const db = req.app.get('db');
         const {image, address, rent} = req.params
-        db.add_property([image, address, rent])
-        .then ((res) => res.status(200).send(res))
+        db.add_property([req.user.id, image, address, rent])
+        .then ((data) => res.status(200).send(data))
         .catch((err) => res.status(500).send(err))
     }
 }

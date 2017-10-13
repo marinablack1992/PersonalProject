@@ -33,11 +33,10 @@ passport.use(new Auth0Strategy({
     clientSecret: process.env.AUTH_CLIENT_SECRET,
     callbackURL: process.env.CALLBACK_URL
 }, function (accessToken, refreshToken, extraParams, profile, done) {
-    
-    const db = app.get('db'); //get the information from the string 'db'
-    //the identities[0].user_id if from the profile parameter. if you console log you can see where we got the data from.
+
+    const db = app.get('db');
+
     db.find_user([profile.identities[0].user_id]).then(user => {
-        console.log(profile)
         if (user[0]) {
             return done(null, user[0].id)
         } else {
@@ -45,7 +44,7 @@ passport.use(new Auth0Strategy({
             db.create_user([profile._json.name, profile._json.email, profile._json.picture, profile._json.identities[0].user_id]).then(user => {
                 return done(null, user[0].id);
             })
-            
+
         }
     })
 }
@@ -53,12 +52,12 @@ passport.use(new Auth0Strategy({
 
 app.get('/auth', passport.authenticate('auth0'));
 app.get('/auth/callback', passport.authenticate('auth0', {
-    successRedirect: 'http://localhost:3000/#/check',
+    successRedirect:'http://localhost:3000/check',
     failureRedirect: '/auth'
 }));
 
-app.get('/auth/me', (req, res, next) =>{
-    if (!req.user){
+app.get('/auth/me', (req, res, next) => {
+    if (!req.user) {
         return res.status(404).send('User not found.')
     }
     return res.status(200).send(req.user);
@@ -66,26 +65,26 @@ app.get('/auth/me', (req, res, next) =>{
 
 app.get('/auth/logout', ((req, res, next) => {
     req.logOut();
-    res.redirect(302, 'http://localhost:3000/#/')
+    res.redirect(302, 'http://localhost:3000/')
 }))
 //user info gets added to express session at login.
 passport.serializeUser(function (id, done) {
-    
+
     done(null, id)
 })
 
 passport.deserializeUser(function (id, done) { //everytime the user wants to go to an endpoint etc, the deserialize checks for a session in the serialize box and then
-    
+
     app.get('db').find_current_user([id])
         .then(user => {
-            
+
             done(null, user[0]); // takes user object from database and puts it on req.user. we can use it on any endpoint now.
         }).catch(err => console.log(err))
 })
 
 
 //endpoints:
-app.post('/api/setUser/:id/:type', ctrl.setUser)
+app.post('/api/setuser/:id/:type', ctrl.setUser)
 app.post('/api/addProp/:image/:address/:rent', ctrl.addProperty)
 
 
