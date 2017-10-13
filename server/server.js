@@ -23,7 +23,7 @@ app.use(passport.session());
 
 massive(process.env.CONNECTION_STRING).then(db => {
     console.log('You have successfully connected to the database.')
-    app.set('db', db); //the string db
+    app.set('db', db);
 })
 
 // Auth0Setup:
@@ -56,9 +56,10 @@ app.get('/auth/callback', passport.authenticate('auth0', {
     failureRedirect: '/auth'
 }));
 
+
 app.get('/auth/me', (req, res, next) => {
     if (!req.user) {
-        return res.status(404).send('User not found.')
+        return res.status(200).send(false)
     }
     return res.status(200).send(req.user);
 })
@@ -83,7 +84,10 @@ passport.deserializeUser(function (id, done) { //everytime the user wants to go 
 })
 
 
-//endpoints:
+//GET endpoints:
+app.get('/api/:id/userproperties', ctrl.getProperties)
+
+//POST endpoints:
 app.post('/api/setuser/:id/:type', ctrl.setUser)
 app.post('/api/addProp/:image/:address/:rent', ctrl.addProperty)
 

@@ -5,7 +5,7 @@ class NavBar extends Component {
     render() {
         return (
             <div className='container'>
-                <Link to='/dashboard'><div>Profile</div></Link>
+                <Link to='/ldashboard'><div>Profile</div></Link>
                 <div>Logout</div>
                 </div>
         )

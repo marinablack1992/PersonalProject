@@ -1,24 +1,18 @@
 import axios from 'axios';
 
 const initialState = {
-    auth_id:"",
-    email:"",
-    id:0,
-    img:"",
-    phone:"",
-    prefcontact:"",
-    status:"",
-    user_name:"",
-    tenant:""
+    user: {},
+    newUser: {},
+    userProps: {}
   
 }
 
-const USER_CHECK = "USER_CHECK"
 const GET_USER_INFO = "GET_USER_INFO"
 const SET_USER_TYPE = "SET_USER_TYPE"
 const ADD_PROPERTY = "ADD_PROPERTY"
+const GET_USER_PROPERTIES = "GET_USER_PROPERTIES"
 
-//action builders:
+//get actions:
 
 export function getUserInfo() {
     const userData = axios.get('/auth/me')
@@ -32,11 +26,25 @@ export function getUserInfo() {
     }
 }
 
+export function getUserProperties(id){
+    const userProps = axios.get(`/api/${id}/userproperties`)
+    .then(response => {
+        return response.data
+    })
+
+    return {
+        type: GET_USER_PROPERTIES,
+        payload: userProps
+    }
+}
+
+
+//create actions:
+
 export function setUser(id, type) {
     console.log('action has fired')
     const newData = axios.post(`/api/setuser/${id}/${type}`)
         .then(response => {
-            console.log( "setuser response",response)
             return response.data
         }).catch((err) => console.log(err))
 
@@ -58,11 +66,14 @@ export function addProperty(image, address, rent) {
     }
 }
 
+
 export default function reducer(state = initialState, action) {
-    console.log(action)
     switch (action.type) {
         case GET_USER_INFO + "_FULFILLED":
             return Object.assign({}, state, { user: action.payload })
+
+        case GET_USER_PROPERTIES + "_FULFILLED":
+            return Object.assign({}, state, { userProps: action.payload})
 
         case SET_USER_TYPE + "_FULFILLED":
             console.log('set type', action.payload)

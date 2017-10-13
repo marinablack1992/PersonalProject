@@ -12,9 +12,9 @@ componentDidMount(){
 
 componentWillReceiveProps(newProps){
     if (newProps.user.status === 'Landlord'){
-        this.props.history.push('/l/dashboard')
+        this.props.history.push('/ldashboard')
     } else if (newProps.user.status === 'Tenant'){
-        this.props.history.push('/t/dashboard')
+        this.props.history.push('/tdashboard')
     }
 }
 

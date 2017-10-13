@@ -15,8 +15,8 @@ export default(
     <Switch>
     <Route component={Login} exact path ='/'/>
     <Route component={LandlordCheck} path='/check' />
-    <Route component={Dashboard} path ='/l/dashboard'/>
-    <Route component={TenantDash} path='/t/dashboard' />
+    <Route component={Dashboard} path ='/ldashboard'/>
+    <Route component={TenantDash} path='/tdashboard' />
     <Route component={RequestFeed} path ='/requests'/>
     <Route component={AddProperty} path ='/addprop'/>
     <Route component={AddTenant} path ='/addtenant'/>
