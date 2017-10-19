@@ -85,11 +85,16 @@ passport.deserializeUser(function (id, done) { //everytime the user wants to go 
 
 
 //GET endpoints:
-app.get('/api/:id/userproperties', ctrl.getProperties)
+app.get('/api/:id/properties', ctrl.getProperties)
+app.get('/api/userpropstens', ctrl.getUserPropsTens)
 
 //POST endpoints:
 app.post('/api/setuser/:id/:type', ctrl.setUser)
-app.post('/api/addProp/:image/:address/:rent', ctrl.addProperty)
+app.post('/api/addprop/:image/:address/:rent', ctrl.addProperty)
+app.post('/api/addtenant/:email/:lease/:prop_id', ctrl.addTenant)
+
+
+app.put('/api/contact/:id/:phone/:preferred', ctrl.editContact)
 
 
 

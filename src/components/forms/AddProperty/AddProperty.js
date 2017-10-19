@@ -30,10 +30,7 @@ class AddProperty extends Component {
         })
     }
 
-    render() {
-        const user = this.props.user
-        console.log('addproperty', user)
-        
+    render() {        
         return (
             <div className='container'>
                 <NavBar />
