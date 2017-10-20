@@ -3,7 +3,7 @@ import axios from 'axios';
 const initialState = {
     user: {},
     newUser: {},
-    userProps: {},
+    userProps: [],
     newTenant: {},
     newProp: {},
     prop: {},

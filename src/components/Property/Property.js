@@ -7,11 +7,9 @@ class Property extends Component {
 
     componentDidMount() {
         this.props.getUserProperties(this.props.user.id)
-        this.props.getUserPropsTens();
     }
 
     render() {
-        console.log('propsTens', this.props.propsTens)
         return (
             <div className='container'>
                 <div className='propertyoptions'>
@@ -22,11 +20,9 @@ class Property extends Component {
                     <div>Delete Property</div>
 
                     <div>
-                        Image:{this.props.userProps.imageurl}
-                        Address:{this.props.userProps.address}
-                        Rent:{this.props.userProps.monthly_rent}
-                        Current Tenant:{this.props.propsTens.ten_email}
-                        Lease Expiration:{this.props.propsTens.lease_exp}
+                        Image:{this.props.property.imageurl}
+                        Address:{this.props.property.address}
+                        Rent:{this.props.property.monthly_rent}
                     </div>
 
                     <div>
@@ -50,4 +46,6 @@ function mapStateToProps(state) {
         }
 }
 
-export default connect(mapStateToProps, { getUserProperties, getUserPropsTens })(Property)
+export default Property
+
+// export default connect(mapStateToProps, { getUserProperties, getUserPropsTens })(Property)

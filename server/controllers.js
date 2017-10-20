@@ -11,7 +11,7 @@ module.exports = {
         const db = req.app.get('db');
         db.get_users_tenants_properties([req.user.id])
         .then (response => {
-            res.status(200).send(response[0])
+            res.status(200).send(response)
         })
     },
 
@@ -46,7 +46,7 @@ module.exports = {
         const {id} = req.params
         db.get_user_props([id])
         .then (response => {
-            res.status(200).send(response[0])
+            res.status(200).send(response)
         })
     },
 
