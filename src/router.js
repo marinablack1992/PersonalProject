@@ -23,6 +23,6 @@ export default(
     <Route component={AddTenant} path ='/addtenant'/>
     <Route component={Contact} path ='/contact'/>
     <Route component={RequestForm} path ='/addreq'/>
-    <Route component={EditProperty} path='/editprop'/>
+    <Route component={EditProperty} path='/editprop/:id'/>
     </Switch>
 )

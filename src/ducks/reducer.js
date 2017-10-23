@@ -7,7 +7,8 @@ const initialState = {
     addTenant: {},
     newProp: {},
     prop: {},
-    contactUpdate: {}
+    contactUpdate: {},
+    editProp: {}
 
 }
 
@@ -17,6 +18,7 @@ const ADD_PROPERTY = "ADD_PROPERTY"
 const GET_USER_PROPERTIES = "GET_USER_PROPERTIES"
 const UPDATE_USER_CONTACT = "UPDATE_USER_CONTACT"
 const ADD_TENANT = "ADD_TENANT"
+const EDIT_PROPERTY = "EDIT_PROPERTY"
 
 //get actions:
 
@@ -97,6 +99,18 @@ export function updateContact(phone, prefcontact) {
     }
 }
 
+export function updateProperty(id, body){
+    console.log(body)
+    const updatedProp = axios.put(`/api/editprop/${id}`, body)
+    .then(response => response.data)
+    .catch(err => console.log(err))
+
+    return {
+        type: EDIT_PROPERTY,
+        payload: updatedProp
+    }
+}
+
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {
@@ -117,6 +131,9 @@ export default function reducer(state = initialState, action) {
 
         case ADD_PROPERTY + "_FULFILLED":
             return Object.assign({}, state, { newProp: action.payload })
+
+        case EDIT_PROPERTY + "_FULFILLED":
+            return Object.assign({}, state, { editProp: action.payload })
 
 
         default:

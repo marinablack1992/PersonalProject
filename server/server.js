@@ -90,10 +90,12 @@ app.get('/api/properties', ctrl.getProperties)
 //POST endpoints:
 app.post('/api/setuser/:id/:type', ctrl.setUser)
 app.post('/api/addprop/:image/:address/:rent', ctrl.addProperty)
+
+
+//PUT endpoints:
 app.put('/api/addtenant/:id/:email/:lease', ctrl.addTenant)
-
-
 app.put('/api/contact/:phone/:prefcontact', ctrl.editContact)
+app.put('/api/editprop/:id', ctrl.editProperty)
 
 
 

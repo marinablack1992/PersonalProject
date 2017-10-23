@@ -14,7 +14,7 @@ class Property extends Component {
             <div className='container'>
                 <div className='propertyoptions'>
                     <Link to='/addtenant'><div>Add Tenant</div></Link>
-                    <Link to='editprop'><div>Edit</div></Link>
+                    <Link to={`/editprop/${this.props.property.id}`}><div>Edit</div></Link>
                     <div>Delete</div>
 
                     <div>

@@ -54,5 +54,16 @@ module.exports = {
         db.update_contact([req.user.id, phone, prefcontact])
         .then((data) => res.status(200).send(data))
         .catch((err) => res.status(500).send(err))
+    },
+
+    editProperty: (req, res, next) => {
+        const db = req.app.get('db');
+        const {id} = req.params
+        console.log(id)
+        console.log(req.body)
+        const {imageurl, address, monthly_rent, tenant_email, lease_exp} = req.body
+        db.update_property([id, imageurl, address, monthly_rent, tenant_email, lease_exp])
+        .then((data) => res.status(200).send(data))
+        .catch((err) => res.status(500).send(err))
     }
 }
