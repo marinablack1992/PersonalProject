@@ -10,6 +10,7 @@ import Contact from './components/forms/Contact/Contact.js'
 import RequestForm from './components/forms/RequestForm/RequestForm.js'
 import TenantDash from './components/Dashboard/TenantDash/TenantDash.js'
 import LandlordCheck from './components/LandlordCheck/LandlordCheck.js'
+import EditProperty from './components/forms/EditProperty/EditProperty.js'
 
 export default(
     <Switch>
@@ -22,5 +23,6 @@ export default(
     <Route component={AddTenant} path ='/addtenant'/>
     <Route component={Contact} path ='/contact'/>
     <Route component={RequestForm} path ='/addreq'/>
+    <Route component={EditProperty} path='/editprop'/>
     </Switch>
 )

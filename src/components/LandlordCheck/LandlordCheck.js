@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {getUserInfo, setUser} from './../../ducks/reducer.js'
+import { Link } from 'react-router-dom'
 
 class LandlordCheck extends Component {
 
@@ -23,8 +24,8 @@ render(){
   
     return (
         <div>
-            <button value={"Landlord"} onClick = {(e)=>this.props.setUser(user.id, e.target.value)}>Landlord</button>
-            <button value={"Tenant"} onClick = {(e)=>this.props.setUser(user.id, e.target.value)}>Tenant</button>
+            <Link to='/ldashboard'><button value={"Landlord"} onClick = {(e)=>this.props.setUser(user.id, e.target.value)}>Landlord</button></Link>
+            <Link to='tdashboard'><button value={"Tenant"} onClick = {(e)=>this.props.setUser(user.id, e.target.value)}>Tenant</button></Link>
         </div>
     )
 }

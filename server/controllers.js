@@ -32,29 +32,27 @@ module.exports = {
         .then ((data) => res.status(200).send(data))
         .catch((err) => res.status(500).send(err))
     },
-
+    
     addTenant: (req, res, next) => {
         const db = req.app.get('db');
-        const {email, lease, prop_id} = req.params
-        db.add_tenant([email, lease, req.user.id, prop_id])
+        const {id, email, lease} = req.params
+        db.add_tenant([id, email, lease])
         .then ((data) => res.status(200).send(data))
         .catch((err) => res.status(500).send(err))
     },
 
     getProperties: (req, res, next) => {
         const db = req.app.get('db');
-        const {id} = req.params
-        db.get_user_props([id])
-        .then (response => {
-            res.status(200).send(response)
-        })
+        db.get_user_props([req.user.id])
+        .then (response => res.status(200).send(response))
     },
 
     editContact: (req, res, next) => {
         const db = req.app.get('db');
-        const {id, phone, preferred} = req.params;
-        db.update_contact([id, phone, preferred])
-        .then ((data) => res.status(200).send(data))
+        const {phone, prefcontact} = req.params;
+        console.log(req.user.id)
+        db.update_contact([req.user.id, phone, prefcontact])
+        .then((data) => res.status(200).send(data))
         .catch((err) => res.status(500).send(err))
     }
 }

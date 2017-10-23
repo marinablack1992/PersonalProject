@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom'
 import NavBar from './../NavBar/NavBar.js'
 import Property from './../Property/Property.js';
 import { connect } from 'react-redux'
-import { getUserProperties, getUserPropsTens } from './../../ducks/reducer.js';
+import { getUserProperties } from './../../ducks/reducer.js';
 
 
 class Dashboard extends Component {
     
     componentDidMount() {
-        this.props.getUserProperties(this.props.user.id)
+        this.props.getUserProperties()
     }
 
     componentWillReceiveProps(newProps) {
@@ -20,7 +20,6 @@ class Dashboard extends Component {
     }
     
     render() {
-        console.log('user mounted to dash', this.props.user)
         return (
             <div className='container'>
                 <NavBar />
@@ -40,4 +39,4 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps, { getUserProperties, getUserPropsTens })(Dashboard)
+export default connect(mapStateToProps, { getUserProperties })(Dashboard)

@@ -44,14 +44,14 @@ class Contact extends Component {
                 <div>
                     Preferred Contact Method
                     <select value={this.state.preferred} onChange={(e) => { this.handleChange('preferred', e) }}>
-                        <option value='Texts Preferred'>Text</option>
-                        <option value='Emails Preferred'>Email</option>
-                        <option value='Calls Preferred'>Call</option>
-                        <option value='No Preference'>None</option>
+                        <option value='Texts'>Text</option>
+                        <option value='Emails'>Email</option>
+                        <option value='Calls'>Call</option>
+                        <option value='None'>None</option>
                     </select></div>
 
                 <Link to='/check'>
-                <button onClick={() => {this.props.updateContact(user.id, this.state.phone, this.state.preferred), alert(`Your information has been updated!`)}}>+</button>
+                <button onClick={() => {this.props.updateContact(this.state.phone, this.state.preferred), alert(`Your information has been updated!`)}}>+</button>
                 </Link>
             </div>
         )

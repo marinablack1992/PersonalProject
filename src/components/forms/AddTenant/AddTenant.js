@@ -17,7 +17,7 @@ class AddTenant extends Component {
     }
 
     componentDidMount() {
-        getUserProperties(this.props.user.id)
+        getUserProperties()
     }
 
 
@@ -28,7 +28,7 @@ class AddTenant extends Component {
     }
 
     render() {
-        // console.log('userProps:', this.props.userProps);
+        console.log('userProps:', this.props.userProps);
         return (
             <div className='container'>
                 <div>Tenant's Email Address</div>
@@ -41,7 +41,7 @@ class AddTenant extends Component {
                  value={this.state.leaseExp}
                  onChange={(e) => {this.handleChange('leaseExp', e)}}/>
 
-                <Link to='/check'><button onClick={() => this.props.addTenant(this.state.email, this.state.leaseExp, this.props.userProps.id)}>+</button></Link>
+                <Link to='/check'><button onClick={() => this.props.addTenant(this.props.userProps[0].id, this.state.email, this.state.leaseExp)}>+</button></Link>
             </div>
         )
     }

@@ -4,10 +4,10 @@ const initialState = {
     user: {},
     newUser: {},
     userProps: [],
-    newTenant: {},
+    addTenant: {},
     newProp: {},
     prop: {},
-    propsTens: {}
+    contactUpdate: {}
 
 }
 
@@ -17,7 +17,6 @@ const ADD_PROPERTY = "ADD_PROPERTY"
 const GET_USER_PROPERTIES = "GET_USER_PROPERTIES"
 const UPDATE_USER_CONTACT = "UPDATE_USER_CONTACT"
 const ADD_TENANT = "ADD_TENANT"
-const GET_USER_PROPS_TENS = "GET_USER_PROPS_TENS"
 
 //get actions:
 
@@ -34,7 +33,7 @@ export function getUserInfo() {
 }
 
 export function getUserProperties(id) {
-    const userProps = axios.get(`/api/${id}/properties`)
+    const userProps = axios.get(`/api/properties`)
         .then(response => {
             return response.data
         })
@@ -44,19 +43,6 @@ export function getUserProperties(id) {
         payload: userProps
     }
 }
-
-export function getUserPropsTens(){
-    const userData = axios.get(`/api/userpropstens`)
-    .then(response => {
-        return response.data
-    })
-
-    return {
-        type: GET_USER_PROPS_TENS,
-        payload: userData
-    }
-}
-
 
 //create actions:
 
@@ -84,8 +70,8 @@ export function addProperty(image, address, rent) {
     }
 }
 
-export function addTenant(email, leaseExp, propId) {
-    const newTenant = axios.post(`/api/addtenant/${email}/${leaseExp}/${propId}`)
+export function addTenant(id, email, lease) {
+    const newTenant = axios.put(`/api/addtenant/${id}/${email}/${lease}`)
         .then(response => {
             return response.data
         })
@@ -98,9 +84,11 @@ export function addTenant(email, leaseExp, propId) {
 
 // update actions:
 
-export function updateContact(id, phone, preferred) {
-    const updatedProp = axios.put(`api/contact/${id}/${phone}/${preferred}`)
+export function updateContact(phone, prefcontact) {
+   
+    const updatedProp = axios.put(`/api/contact/${phone}/${prefcontact}`)
         .then(response => {
+            return response.data
         }).catch((err) => console.log(err))
 
     return {
@@ -117,9 +105,6 @@ export default function reducer(state = initialState, action) {
 
         case GET_USER_PROPERTIES + "_FULFILLED":
             return Object.assign({}, state, { userProps: action.payload })
-
-        case GET_USER_PROPS_TENS + "_FULFILLED":
-            return Object.assign({}, state, { propsTens: action.payload })
 
         case SET_USER_TYPE + "_FULFILLED":
             return Object.assign({}, state, { newUser: action.payload })
