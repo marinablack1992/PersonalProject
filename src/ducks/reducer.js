@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from 'axios'
 
 const initialState = {
     user: {},
@@ -8,7 +8,8 @@ const initialState = {
     newProp: {},
     prop: {},
     contactUpdate: {},
-    editProp: {}
+    editProp: {},
+    propsUsers: []
 
 }
 
@@ -19,6 +20,8 @@ const GET_USER_PROPERTIES = "GET_USER_PROPERTIES"
 const UPDATE_USER_CONTACT = "UPDATE_USER_CONTACT"
 const ADD_TENANT = "ADD_TENANT"
 const EDIT_PROPERTY = "EDIT_PROPERTY"
+const DELETE_PROPERTY = "DELETE_PROPERTY"
+const GET_USERS_PROPS = "GET_USERS_PROPS"
 
 //get actions:
 
@@ -46,6 +49,18 @@ export function getUserProperties(id) {
     }
 }
 
+export function getUsersProps() {
+    const allData = axios.get(`/api/usersprops`)
+        .then(response => {
+            return response.data
+        })
+
+    return {
+        type: GET_USERS_PROPS,
+        payload: allData
+    }
+}
+
 //create actions:
 
 export function setUser(id, type) {
@@ -61,8 +76,14 @@ export function setUser(id, type) {
 }
 
 export function addProperty(image, address, rent) {
-    const newProp = axios.post(`/api/addProp/${image}/${address}/${rent}`)
+    var user = {
+        image,
+        address,
+        rent
+    }
+    const newProp = axios.post(`/api/addProp/`, user)
         .then(response => {
+            console.log('actionbuild addprop', response.data)
             return response.data
         })
 
@@ -87,7 +108,7 @@ export function addTenant(id, email, lease) {
 // update actions:
 
 export function updateContact(phone, prefcontact) {
-   
+
     const updatedProp = axios.put(`/api/contact/${phone}/${prefcontact}`)
         .then(response => {
             return response.data
@@ -99,15 +120,26 @@ export function updateContact(phone, prefcontact) {
     }
 }
 
-export function updateProperty(id, body){
+export function updateProperty(id, body) {
     console.log(body)
     const updatedProp = axios.put(`/api/editprop/${id}`, body)
-    .then(response => response.data)
-    .catch(err => console.log(err))
+        .then(response => response.data)
+        .catch(err => console.log(err))
 
     return {
         type: EDIT_PROPERTY,
         payload: updatedProp
+    }
+}
+
+export function deleteProperty(id) {
+    const newProp = axios.delete(`/api/delete/${id}`)
+        .then(response => response.data)
+        .catch(err => console.log('this property was not deleted'))
+
+    return {
+        type: DELETE_PROPERTY,
+        payload: newProp
     }
 }
 
@@ -130,10 +162,16 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, { newTenant: action.payload })
 
         case ADD_PROPERTY + "_FULFILLED":
-            return Object.assign({}, state, { newProp: action.payload })
+            return Object.assign({}, state, { userProps: action.payload })
 
         case EDIT_PROPERTY + "_FULFILLED":
             return Object.assign({}, state, { editProp: action.payload })
+
+        case DELETE_PROPERTY + "_FULFILLED":
+            return Object.assign({}, state, { userProps: action.payload })
+
+        case GET_USERS_PROPS + "_FULFILLED":
+            return Object.assign({}, state, { propsUsers: action.payload })
 
 
         default:

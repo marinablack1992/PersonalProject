@@ -30,7 +30,6 @@ class AddTenant extends Component {
     }
 
     render() {
-        console.log('userProps:', this.props.userProps);
         return (
             <div className='addten_outer-container'>
                 <NavBar />

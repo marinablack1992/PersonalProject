@@ -26,8 +26,9 @@ module.exports = {
     },
 
     addProperty: (req, res, next) => {
+        console.log('addprop', req.body)
         const db = req.app.get('db');
-        const {image, address, rent} = req.params
+        const {image, address, rent} = req.body
         db.add_property([req.user.id, image, address, rent])
         .then ((data) => res.status(200).send(data))
         .catch((err) => res.status(500).send(err))
@@ -63,5 +64,20 @@ module.exports = {
         db.update_property([id, imageurl, address, monthly_rent, tenant_email, lease_exp])
         .then((data) => res.status(200).send(data))
         .catch((err) => res.status(500).send(err))
+    },
+
+    deleteProperty: (req, res, next) => {
+        const db = req.app.get('db');
+        const {id} = req.params;
+        db.delete_property([req.user.id, id])
+        .then((data) => res.status(200).send(data))
+        .catch((err) => res.status(500).send(err))
+    },
+
+    getAllPropsUsers: (req, res, next) => {
+        const db = req.app.get('db');
+        db.get_all_users_props()
+        .then(data => res.status(200).send(data))
+        .catch(err => res.status(500).send(console.log('Controller Failure', err)))
     }
 }

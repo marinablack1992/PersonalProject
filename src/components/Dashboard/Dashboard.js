@@ -4,7 +4,7 @@ import NavBar from './../NavBar/NavBar.js'
 import Property from './../Property/Property.js';
 import { connect } from 'react-redux'
 import { getUserProperties } from './../../ducks/reducer.js';
-import './Dashboard.css';
+import './Dashboard.css'
 
 
 class Dashboard extends Component {

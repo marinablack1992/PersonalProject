@@ -6,8 +6,8 @@ const massive = require('massive');
 const passport = require('passport');
 const Auth0Strategy = require('passport-auth0');
 const cors = require('cors');
-const ctrl = require('./controllers.js')
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
+const ctrl = require('./controllers.js');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const app = express();
 
@@ -121,23 +121,25 @@ passport.deserializeUser(function (id, done) { //everytime the user wants to go 
         .then(user => {
 
             done(null, user[0]); // takes user object from database and puts it on req.user. we can use it on any endpoint now.
-        }).catch(err => console.log(err))
+        }).catch(err => console.log('deserialize failed', err))
 })
 
 
 //GET endpoints:
 app.get('/api/properties', ctrl.getProperties)
+app.get('/api/usersprops', ctrl.getAllPropsUsers)
  
 //POST endpoints:
 app.post('/api/setuser/:id/:type', ctrl.setUser)
-app.post('/api/addprop/:image/:address/:rent', ctrl.addProperty)
-
+app.post('/api/addprop/', ctrl.addProperty)
 
 //PUT endpoints:
 app.put('/api/addtenant/:id/:email/:lease', ctrl.addTenant)
 app.put('/api/contact/:phone/:prefcontact', ctrl.editContact)
 app.put('/api/editprop/:id', ctrl.editProperty)
 
+//DELETE endpoints:
+app.delete('/api/delete/:id', ctrl.deleteProperty)
 
 
 
