@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville|Lobster");
+.property_main {
+  background-color: #273E47;
+  padding: 10px; }
+
+.property_container {
+  border-radius: 10px; }
+
+.property_info {
+  background-color: #D8C99B;
+  width: 1000px;
+  position: relative;
+  left: calc(50% - 500px);
+  height: 225px;
+  font-family: "Libre Baskerville", serif;
+  display: flex;
+  margin-right: 212.5px;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom: solid 1px #AC9969;
+  border-left: solid 1px #AC9969;
+  border-right: solid 1px #AC9969; }
+  .property_info .property_image {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 12.5px;
+    top: 12.5px;
+    border: solid 2px #AC9969;
+    border-radius: 10px; }
+  .property_info .property_columnA {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-left: 237.5px; }
+    .property_info .property_columnA .property_address {
+      margin-bottom: 30px; }
+    .property_info .property_columnA .property_rent {
+      margin-top: 30px; }
+  .property_info .property_columnB {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-left: 37.5px; }
+    .property_info .property_columnB .property_tenant {
+      margin-bottom: 30px; }
+    .property_info .property_columnB .property_lease {
+      margin-top: 30px; }
+
+.property_nav {
+  position: relative;
+  left: calc(50% - 500px);
+  background-color: #D8973C;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 1000px;
+  height: 60px;
+  color: #273E47;
+  font-family: "Lobster", cursive;
+  font-size: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top: solid 1px #AC9969;
+  border-left: solid 1px #AC9969;
+  border-right: solid 1px #AC9969; }
+  .property_nav .property_addtenant {
+    text-decoration: none;
+    color: #273E47; }
+  .property_nav .property_edit {
+    text-decoration: none;
+    color: #273E47; }

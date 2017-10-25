@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville|Lobster");
+.check_container {
+  background-image: url(https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?w=1353&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center; }
+
+.check_btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .check_btns .check_landbtn {
+    background-color: rgba(216, 151, 60, 0.5);
+    border-radius: 10px;
+    width: 300px;
+    height: 100px;
+    font-size: 40px;
+    border: none;
+    font-family: "Lobster", cursive;
+    color: #273E47;
+    letter-spacing: 2px; }
+  .check_btns .check_tenbtn {
+    background-color: rgba(216, 151, 60, 0.5);
+    border-radius: 10px;
+    width: 300px;
+    height: 100px;
+    font-size: 40px;
+    border: none;
+    font-family: "Lobster", cursive;
+    color: #273E47;
+    letter-spacing: 2px; }

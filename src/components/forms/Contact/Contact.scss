@@ -1,0 +1,74 @@
+@import './../../../variables.scss';
+
+.con_container {
+    background-color: $lightColor;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.con_mid-container {
+    background-color: $brightColor;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    h5 {
+        color: $darkColor;
+        font-family: $cursiveFont;
+        font-size: 40px;
+        margin-bottom: 30px;
+        margin-top: 20px;
+        text-decoration: underline;
+
+    }
+
+}
+
+.con_title {
+    color: $darkColor;
+    font-family: $readFont;
+    font-size: 15px;
+    margin-bottom: 20px;
+
+}
+
+.con_input {
+    width: 500px;
+    height: 25px;
+    margin-top: 10px;
+}
+
+.con_link {
+    text-decoration: none;
+    color: $darkColor;
+
+}
+
+.con_btn {
+    background-color: $lightColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    color: $darkColor;
+    height: 30px;
+    width: 30px;
+    margin-left: 470px;
+    margin-top: 10px;
+    font-family: $cursiveFont;
+    font-size: 20px;
+
+}
+
+.con_drop-menu {
+    width: 500px;
+    height: 25px;
+    margin-top: 10px;
+
+}

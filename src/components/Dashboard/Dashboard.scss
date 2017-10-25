@@ -1,0 +1,56 @@
+@import './../../variables.scss';
+
+.tdash_container {
+    background-color: $darkColor;
+    width: 100%;
+    
+}
+
+.tdash_container h1 {
+    margin-top: 20px;
+    color: $brightColor;
+    font-family: $readFont;
+    font-size: 30px;
+}
+
+.tdash_buttons {
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-size: 20px;
+    font-family: $cursiveFont;
+    margin-bottom: 10px;
+
+    .tdash_contact {
+        position: relative;
+        left: calc(50% - 500px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        background-color: $lightColor;
+        border-radius: 10px;
+        height: 40px;
+        width: 250px;
+        color: $medDarkColor;
+    }
+    
+    .tdash_addprop {
+        position: relative;
+        left: calc(50% - 500px);        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        background-color: $lightColor;
+        border-radius: 10px;
+        height: 40px;
+        width: 175px;
+        color: $medDarkColor;
+        font-weight: bolder;
+        margin-left: 12px;
+        
+    }
+}
