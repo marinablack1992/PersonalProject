@@ -28,6 +28,7 @@ class Dashboard extends Component {
                 <div className='ldash_buttons'>
                     <Link className='ldash_contact' to='/contact'><div>Edit Contact Preferences</div></Link>
                     <Link className='ldash_addprop' to='/addprop'><div>Add Property</div></Link>
+                    <Link to='/requests'><div>Manage Requests</div></Link>
                 </div>
                 {this.props.userProps.map((property, i) => <Property key={i} property={property} />)}
             </div >

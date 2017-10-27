@@ -6,6 +6,7 @@ const initialState = {
     userProps: [],
     propsUsers: [],
     requests: [],
+    usersPropsReqs: [],
 
 
     addTenant: {},
@@ -26,6 +27,8 @@ const EDIT_PROPERTY = "EDIT_PROPERTY"
 const DELETE_PROPERTY = "DELETE_PROPERTY"
 const GET_USERS_PROPS = "GET_USERS_PROPS"
 const ADD_REQUEST = "ADD_REQUEST"
+const GET_USERS_PROPS_REQS = "GET_USERS_PROPS_REQS"
+const DELETE_REQUEST = "DELETE_REQUEST"
 
 //get actions:
 
@@ -61,6 +64,18 @@ export function getUsersProps() {
 
     return {
         type: GET_USERS_PROPS,
+        payload: allData
+    }
+}
+
+export function getUsersPropsReqs() {
+    const allData = axios.get(`/api/userspropsreqs`)
+    .then (response => {
+        return response.data
+    })
+    
+    return {
+        type: GET_USERS_PROPS_REQS,
         payload: allData
     }
 }
@@ -158,6 +173,17 @@ export function deleteProperty(id) {
     }
 }
 
+export function deleteRequest(id) {
+    const newReq = axios.delete(`/api/deletereq/${id}`)
+    .then(response => response.data)
+    .catch(err => console.log('action: delete request failed', err))
+
+    return {
+        type: DELETE_REQUEST,
+        payload: newReq
+    }
+}
+
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {
@@ -191,6 +217,11 @@ export default function reducer(state = initialState, action) {
         case ADD_REQUEST + "_FULFILLED":
             return Object.assign({}, state, { requests: action.payload })
 
+        case GET_USERS_PROPS_REQS + "_FULFILLED":
+            return Object.assign({}, state, { usersPropsReqs: action.payload })
+
+        case DELETE_REQUEST + "_FULFILLED":
+            return Object.assign({}, state, {requests: action.payload })
 
         default:
             return state;

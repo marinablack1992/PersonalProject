@@ -128,6 +128,7 @@ passport.deserializeUser(function (id, done) { //everytime the user wants to go 
 //GET endpoints:
 app.get('/api/properties', ctrl.getProperties)
 app.get('/api/usersprops', ctrl.getAllPropsUsers)
+app.get('/api/userspropsreqs', ctrl.getUsersPropsReqs)
  
 //POST endpoints:
 app.post('/api/setuser/:id/:type', ctrl.setUser)
@@ -141,6 +142,7 @@ app.put('/api/editprop/:id', ctrl.editProperty)
 
 //DELETE endpoints:
 app.delete('/api/delete/:id', ctrl.deleteProperty)
+app.delete('/api/deletereq/:id', ctrl.deleteRequest)
 
 
 

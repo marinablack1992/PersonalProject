@@ -13,7 +13,7 @@ class RequestForm extends Component {
             land_email: '',
             req_img: '',
             description: '',
-            priority: '',
+            priority: '1',
             property: 0
         }
 
