@@ -4,12 +4,15 @@ const initialState = {
     user: {},
     newUser: {},
     userProps: [],
+    propsUsers: [],
+    requests: [],
+
+
     addTenant: {},
     newProp: {},
     prop: {},
     contactUpdate: {},
     editProp: {},
-    propsUsers: []
 
 }
 
@@ -22,6 +25,7 @@ const ADD_TENANT = "ADD_TENANT"
 const EDIT_PROPERTY = "EDIT_PROPERTY"
 const DELETE_PROPERTY = "DELETE_PROPERTY"
 const GET_USERS_PROPS = "GET_USERS_PROPS"
+const ADD_REQUEST = "ADD_REQUEST"
 
 //get actions:
 
@@ -81,9 +85,8 @@ export function addProperty(image, address, rent) {
         address,
         rent
     }
-    const newProp = axios.post(`/api/addProp/`, user)
+    const newProp = axios.post(`/api/addprop`, user)
         .then(response => {
-            console.log('actionbuild addprop', response.data)
             return response.data
         })
 
@@ -105,6 +108,19 @@ export function addTenant(id, email, lease) {
     }
 }
 
+export function addRequest(prop_id, body) {
+    console.log('action', body)
+    const newProp = axios.post(`/api/addreq/${prop_id}`, body)
+        .then(response => {
+            return response.data
+        })
+
+    return {
+        type: ADD_REQUEST,
+        payload: newProp
+    }
+}
+
 // update actions:
 
 export function updateContact(phone, prefcontact) {
@@ -121,7 +137,6 @@ export function updateContact(phone, prefcontact) {
 }
 
 export function updateProperty(id, body) {
-    console.log(body)
     const updatedProp = axios.put(`/api/editprop/${id}`, body)
         .then(response => response.data)
         .catch(err => console.log(err))
@@ -172,6 +187,9 @@ export default function reducer(state = initialState, action) {
 
         case GET_USERS_PROPS + "_FULFILLED":
             return Object.assign({}, state, { propsUsers: action.payload })
+
+        case ADD_REQUEST + "_FULFILLED":
+            return Object.assign({}, state, { requests: action.payload })
 
 
         default:

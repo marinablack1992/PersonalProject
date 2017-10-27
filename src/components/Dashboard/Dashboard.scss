@@ -1,20 +1,20 @@
 @import './../../variables.scss';
 
-.tdash_container {
+.ldash_container {
     background-color: $darkColor;
     width: 100%;
     height: 100vh;
     
 }
 
-.tdash_container h1 {
+.ldash_container h1 {
     margin-top: 20px;
     color: $brightColor;
     font-family: $readFont;
     font-size: 30px;
 }
 
-.tdash_buttons {
+.ldash_buttons {
     position: relative;
     margin-top: 20px;
     display: flex;
@@ -24,7 +24,7 @@
     font-family: $cursiveFont;
     margin-bottom: 10px;
 
-    .tdash_contact {
+    .ldash_contact {
         position: relative;
         left: calc(50% - 500px);
         display: flex;
@@ -38,7 +38,7 @@
         color: $medDarkColor;
     }
     
-    .tdash_addprop {
+    .ldash_addprop {
         position: relative;
         left: calc(50% - 500px);        
         display: flex;

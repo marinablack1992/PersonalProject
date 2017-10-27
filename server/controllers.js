@@ -79,5 +79,16 @@ module.exports = {
         db.get_all_users_props()
         .then(data => res.status(200).send(data))
         .catch(err => res.status(500).send(console.log('Controller Failure', err)))
+    },
+
+    addRequest: (req, res, next) => {
+        console.log(req.body)
+        console.log(req.params)
+        const db =  req.app.get('db');
+        const {property_id} = req.params;
+        const {req_img, description, priority, land_email} = req.body;
+        db.add_request([req_img, description, priority, land_email, req.user.id, property_id])
+        .then(data => res.status(200).send(data))
+        .catch(err => res.status(500).send(console.log('Add Request Failed', err)))
     }
 }

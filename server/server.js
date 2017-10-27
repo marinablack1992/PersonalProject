@@ -131,7 +131,8 @@ app.get('/api/usersprops', ctrl.getAllPropsUsers)
  
 //POST endpoints:
 app.post('/api/setuser/:id/:type', ctrl.setUser)
-app.post('/api/addprop/', ctrl.addProperty)
+app.post('/api/addprop', ctrl.addProperty)
+app.post('/api/addreq/:property_id', ctrl.addRequest)
 
 //PUT endpoints:
 app.put('/api/addtenant/:id/:email/:lease', ctrl.addTenant)

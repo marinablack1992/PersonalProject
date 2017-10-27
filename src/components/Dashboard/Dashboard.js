@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import NavBar from './../NavBar/NavBar.js'
 import Property from './../Property/Property.js';
 import { connect } from 'react-redux'
-import { getUserProperties } from './../../ducks/reducer.js';
+import { getUserProperties } from './../../ducks/reducer.js'
 import './Dashboard.css'
 
 
@@ -22,12 +22,12 @@ class Dashboard extends Component {
 
     render() {
         return (
-            <div className='tdash_container'>
+            <div className='ldash_container'>
                 <NavBar />
                 <h1>My Properties</h1>
-                <div className='tdash_buttons'>
-                    <Link className='tdash_contact' to='/contact'><div>Edit Contact Preferences</div></Link>
-                    <Link className='tdash_addprop' to='/addprop'><div>Add Property</div></Link>
+                <div className='ldash_buttons'>
+                    <Link className='ldash_contact' to='/contact'><div>Edit Contact Preferences</div></Link>
+                    <Link className='ldash_addprop' to='/addprop'><div>Add Property</div></Link>
                 </div>
                 {this.props.userProps.map((property, i) => <Property key={i} property={property} />)}
             </div >

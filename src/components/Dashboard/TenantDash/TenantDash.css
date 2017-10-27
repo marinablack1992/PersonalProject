@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville|Lobster");
+.tdash_outer-container {
+  height: 100vh;
+  overflow: hidden; }
+
+.tdash_container {
+  background-color: #D8C99B;
+  height: 100%;
+  width: 100%; }
+
+.tdash_nav {
+  background-color: #AC9969;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  font-family: "Libre Baskerville", serif;
+  border-top: solid 2px #273E47;
+  border-bottom: solid 2px #273E47; }
+  .tdash_nav .tdash_links-container {
+    display: flex; }
+    .tdash_nav .tdash_links-container .tdash_link {
+      text-decoration: none;
+      color: #273E47;
+      margin-left: 15px;
+      border: solid 1px #273E47;
+      padding: 5px;
+      border-radius: 5px;
+      background-color: #D8C99B; }
+  .tdash_nav .tdash_payrent {
+    margin-right: 15px; }
+
+.tdash_mid-container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%; }
+  .tdash_mid-container .tdash_img-prop {
+    background-color: #D8973C;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    width: 1000px;
+    height: 100vh; }
+    .tdash_mid-container .tdash_img-prop .tdash_img {
+      margin: 20px;
+      border: solid 1px #273E47;
+      border-radius: 5px;
+      max-width: 500px;
+      max-height: 500px; }
+    .tdash_mid-container .tdash_img-prop .tdash_propertyinfo-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around; }
+      .tdash_mid-container .tdash_img-prop .tdash_propertyinfo-container .tdash_propertyinfo {
+        margin: 20px;
+        width: 350px;
+        height: 200px;
+        background-color: #273E47;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        border: solid 5px #273E47;
+        border-radius: 5px; }
+        .tdash_mid-container .tdash_img-prop .tdash_propertyinfo-container .tdash_propertyinfo .tdash_title {
+          color: #D8C99B; }
+      .tdash_mid-container .tdash_img-prop .tdash_propertyinfo-container .tdash_landlordinfo {
+        margin: 20px;
+        width: 350px;
+        height: 200px;
+        background-color: #273E47;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        border: solid 5px #273E47;
+        border-radius: 5px; }
+        .tdash_mid-container .tdash_img-prop .tdash_propertyinfo-container .tdash_landlordinfo .tdash_title {
+          color: #D8C99B; }

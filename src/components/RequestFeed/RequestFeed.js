@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Request from './Request/Request.js'
 import NavBar from './../NavBar/NavBar.js'
 import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
 
 class RequestFeed extends Component {
     render() {
@@ -9,11 +10,12 @@ class RequestFeed extends Component {
             <div className='container'>
                 <NavBar />
                 <h1>Requests for Property</h1>
-                <Link to='/addreq'><button>Add Request</button></Link>
                 <Request />
             </div>
         )
     }
 }
 
-export default RequestFeed
+export default connect(RequestFeed)
+
+//{this.props.userProps.map((property, i) => <Property key={i} property={property} />)}

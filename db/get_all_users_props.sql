@@ -1,2 +1,2 @@
-select properties.*, users.* from properties
-join users on properties.user_id = users.id
+select p.id as propertyId, u.id as landId, imageurl, address, monthly_rent, user_id, tenant_email, lease_exp, user_name, email, img, auth_id, phone, prefcontact, status from properties p
+join users u on p.user_id = u.id;
