@@ -5,6 +5,7 @@ import { deleteRequest } from './../../../ducks/reducer.js'
 
 class Request extends Component {
     render() {
+        console.log(this.props.request)
         return (
             <div className='req_outer-container'>
                 {this.props.user.status == 'Tenant' ? <button onClick={() => this.props.deleteRequest(this.props.request.requestid)}>Delete Request</button> : null}

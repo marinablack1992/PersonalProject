@@ -30,6 +30,7 @@ class AddTenant extends Component {
     }
 
     render() {
+        console.log(this.props.match.params.id)
         return (
             <div className='addten_outer-container'>
                 <NavBar />
@@ -49,7 +50,7 @@ class AddTenant extends Component {
                                 onChange={(e) => { this.handleChange('leaseExp', e) }} />
                         </div>
 
-                        <Link className='addten_link' to='/check'><button className='addten_btn' onClick={() => this.props.addTenant(this.props.userProps[0].id, this.state.email, this.state.leaseExp)}>+</button></Link>
+                        <Link className='addten_link' to='/check'><button className='addten_btn' onClick={() => this.props.addTenant(this.props.match.params.id, this.state.email, this.state.leaseExp)}>+</button></Link>
                     </div>
                 </div>
             </div>

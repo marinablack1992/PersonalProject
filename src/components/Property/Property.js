@@ -13,7 +13,7 @@ class Property extends Component {
             <div className='property_main'>
                 <div className='property_container'>
                     <div className='property_nav'>
-                        <Link className='property_addtenant' to='/addtenant'><div>Add Tenant</div></Link>
+                        <Link className='property_addtenant' to={`/addtenant/${this.props.property.id}`}><div>Add Tenant</div></Link>
                         <Link className='property_edit' to={`/editprop/${this.props.property.id}`}><div>Edit Property</div></Link>
                         <div onClick={() => {this.props.deleteProperty(this.props.property.id)}}>Delete Property</div>
                     </div>

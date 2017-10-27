@@ -24,6 +24,7 @@ class RequestFeed extends Component {
 }
 
 function mapStateToProps(state){
+    console.log(state.usersPropsReqs)
     return {
         user: state.user,
         usersPropsReqs: state.usersPropsReqs

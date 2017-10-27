@@ -20,7 +20,7 @@ export default(
     <Route component={TenantDash} path='/tdashboard' />
     <Route component={RequestFeed} path ='/requests'/>
     <Route component={AddProperty} path ='/addprop'/>
-    <Route component={AddTenant} path ='/addtenant'/>
+    <Route component={AddTenant} path ='/addtenant/:id'/>
     <Route component={Contact} path ='/contact'/>
     <Route component={RequestForm} path ='/addreq'/>
     <Route component={EditProperty} path='/editprop/:id'/>

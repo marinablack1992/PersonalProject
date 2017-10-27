@@ -197,16 +197,16 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, { newUser: action.payload })
 
         case UPDATE_USER_CONTACT + "_FULFILLED":
-            return Object.assign({}, state, { contactUpdate: action.payload })
+            return Object.assign({}, state, { user: action.payload })
 
         case ADD_TENANT + "_FULFILLED":
-            return Object.assign({}, state, { newTenant: action.payload })
+            return Object.assign({}, state, { addTenant: action.payload })
 
         case ADD_PROPERTY + "_FULFILLED":
             return Object.assign({}, state, { userProps: action.payload })
 
         case EDIT_PROPERTY + "_FULFILLED":
-            return Object.assign({}, state, { editProp: action.payload })
+            return Object.assign({}, state, { userProps: action.payload })
 
         case DELETE_PROPERTY + "_FULFILLED":
             return Object.assign({}, state, { userProps: action.payload })
@@ -215,13 +215,13 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, { propsUsers: action.payload })
 
         case ADD_REQUEST + "_FULFILLED":
-            return Object.assign({}, state, { requests: action.payload })
+            return Object.assign({}, state, { usersPropsReqs: action.payload })
 
         case GET_USERS_PROPS_REQS + "_FULFILLED":
             return Object.assign({}, state, { usersPropsReqs: action.payload })
 
         case DELETE_REQUEST + "_FULFILLED":
-            return Object.assign({}, state, {requests: action.payload })
+            return Object.assign({}, state, {usersPropsReqs: action.payload })
 
         default:
             return state;
