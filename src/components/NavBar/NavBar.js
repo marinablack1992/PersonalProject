@@ -37,7 +37,7 @@ class NavBar extends Component {
                     </div>
                 </div>
 
-                <div className={this.state.navbar ? 'sidenav_container-out' : 'sidenav_container-in'}>
+                <div className={this.state.navbar ? 'sidenav expanded' : 'sidenav'}>
                     <Link className='sidenav_link' to='/contact'>Edit Contact Preferences</Link>
                     <Link className='sidenav_link' to='/addprop'>Add Property</Link>
                     <Link className='sidenav_link' to='/requests'>Manage Requests</Link>

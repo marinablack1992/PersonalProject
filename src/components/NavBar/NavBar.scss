@@ -46,7 +46,8 @@
     }
 }
 
-.sidenav_container-out {
+
+.sidenav.expanded {
     background-color: $darkColor;
     width: 200px;
     float: left;
@@ -54,6 +55,8 @@
     flex-direction: column;
     align-items: center;
     height: 90vh;
+    position: fixed;
+    left: 0;
 
     a {
         text-decoration: none;
@@ -77,7 +80,7 @@
 }
 
 
-    .sidenav_container-in {
+    .sidenav {
         background-color: $darkColor;
         width: 200px;
         float: left;
@@ -85,8 +88,9 @@
         flex-direction: column;
         align-items: center;
         height: 90vh;
-        position: relative;
+        position: fixed;
         left: -200px;
+        transition: left .5s;
     
         a {
             text-decoration: none;
