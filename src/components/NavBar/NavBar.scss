@@ -1,65 +1,110 @@
 @import './../../variables.scss';
 
-.main-container {
-    background-color: $medDarkColor;
+
+.navbar_container {
+    height: 75px;
     width: 100%;
-    height: 100px;
-}
-
-.user-photo-holder {
+    background-color: $darkColor;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    background: linear-gradient($darkColor, #726869);
+
+    .navbar_user-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 10px;
+
+        .navbar_link {
+            text-decoration: none;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            margin-left: 10px;
+            margin-right: 25px;
+        }
+
+        .username {
+            font-family: $cursiveFont;
+            font-size: 25px;
+            color: $lightColor;
+            letter-spacing: 2px;
+        }   
+    }
+
+    .nav_logo {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        left: calc(50% - 25px);
+        margin-bottom: 40px;
+    }
 }
 
-.username {
-    margin-left: 20px;
-    text-decoration: none;
-}
-
-.userphoto {
-    margin-left: 10px;
-    text-decoration: none;    
-}
-
-.logout {
-    margin: 40px;
-    text-decoration: none;
-    background: transparent;
-    font-size: 30px;
-    color: #273E47; 
-    font-family: $cursiveFont;
-    border: none;
-}
-
-.avatar  {
-    border-radius: 300px;
-    height: 50px;
-    width: 50px;
-    border: solid;
-    text-decoration: none;    
-}
-
-.links {
-    position: relative;
-    font-family: $cursiveFont;
+.sidenav_container-out {
+    background-color: $darkColor;
+    width: 200px;
+    float: left;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    font-size: 30px;
-    color: #273E47;
-    
+    height: 90vh;
+
     a {
         text-decoration: none;
     }
-    a:visited {
-        color: $darkColor;
+
+    .sidenav_link{
+        border: 1px solid $lightColor;
+        text-decoration: none;
+        color: $lightColor;
+        font-family: $readFont;
+        padding: 10px;
+        width: 150px;
+        margin: 20px;
+        border-radius: 5px;
+
+        a {
+            text-decoration: none;
+            color: $lightColor;
+        }
     }
 }
 
-.nav_logo {
-    position: absolute;
-    left: calc(50% - 35px);
-    width: 70px;
-    height: 70px;
+
+    .sidenav_container-in {
+        background-color: $darkColor;
+        width: 200px;
+        float: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 90vh;
+        position: relative;
+        left: -200px;
+    
+        a {
+            text-decoration: none;
+        }
+    
+        .sidenav_link{
+            border: 1px solid $lightColor;
+            text-decoration: none;
+            color: $lightColor;
+            font-family: $readFont;
+            padding: 10px;
+            width: 150px;
+            margin: 20px;
+            border-radius: 5px;
+    
+            a {
+                text-decoration: none;
+                color: $lightColor;
+            }
+        }
 }

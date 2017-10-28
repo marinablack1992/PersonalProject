@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville|Lobster");
+.navbar_hamburger-icon {
+  border: solid 1px #FBFBF2;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
+  margin-left: 35px; }
+  .navbar_hamburger-icon .hamburger-line {
+    border: solid 1px #FBFBF2;
+    width: 20px;
+    margin: 1px; }

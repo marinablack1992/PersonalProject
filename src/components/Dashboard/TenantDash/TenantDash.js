@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import StripeCheckout from 'react-stripe-checkout';
-// import stripe from './../../../stripeKey';
 import NavBar from './../../NavBar/NavBar.js';
 import axios from 'axios';
 import { connect } from 'react-redux';

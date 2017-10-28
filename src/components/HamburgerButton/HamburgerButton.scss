@@ -1,0 +1,20 @@
+@import './../../variables.scss';
+
+.navbar_hamburger-icon {
+    border: solid 1px $lightColor;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+    margin-left: 35px;
+
+    .hamburger-line {
+        border: solid 1px $lightColor;
+        width: 20px;
+        margin: 1px
+    }
+}

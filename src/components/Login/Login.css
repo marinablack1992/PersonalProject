@@ -1,59 +1,41 @@
-@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville|Lobster');
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville|Lobster");
+.login_outer-container {
+  height: 100vh;
+  overflow: hidden; }
 
-.main {
-    background-image: url(https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?w=1353&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);
-    height: 100vh;
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+.login_container {
+  height: 100%;
+  background-color: #A6A2A2;
+  background-image: URL("https://images.unsplash.com/photo-1468267256438-16da49fada97?auto=format&fit=crop&w=1506&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+  .login_container .login_header-container {
     display: flex;
     justify-content: center;
-}
-.header-container {
-    background-color: #B0A09C;
-    font-family: 'Libre Baskerville', serif;
-    opacity: .7;
-    font-size: 30px;
-    width: 600px;
-    height: 112px;
-    margin-top: 20px;
-}
-
-.header{
-    padding: 12px;
-}
-
-.simplified {
-    font-family: 'Lobster', cursive;
-    letter-spacing: 1px;
-}
-
-.login-container {
-    width: 200px;
-    height: 100px;
-    background-color: #B0A09C;
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    border-radius: 10px;
-    opacity: .7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.login {
-    font-family: 'Lobster', cursive;
-    font-size: 44px;
-    color: #534E4C;
-    text-decoration: none;
-}
-
-.logintext {
-    text-decoration: none;
-    color: black;
-    
-}
+    flex-direction: column;
+    margin-bottom: 200px; }
+    .login_container .login_header-container h1 {
+      font-family: "Libre Baskerville", serif;
+      font-size: 40px;
+      color: #847577; }
+    .login_container .login_header-container h2 {
+      font-family: "Lobster", cursive;
+      font-size: 30px;
+      color: #847577; }
+  .login_container .login_button-container {
+    margin-bottom: 200px; }
+    .login_container .login_button-container .login_link {
+      text-decoration: none;
+      color: #FBFBF2;
+      border: solid 1px #FBFBF2;
+      border-radius: 5px;
+      padding: 10px;
+      padding-right: 60px;
+      padding-left: 60px;
+      font-size: 40px;
+      font-family: "Libre Baskerville", serif; }
