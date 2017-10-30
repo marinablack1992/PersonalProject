@@ -2,7 +2,7 @@
 
 .editprop_container {
     background-color: $lightColor;
-    height: 100vh;
+    height: calc(100vh - 75px);
     width: 100%;
     display: flex;
     justify-content: center;
@@ -10,10 +10,12 @@
 
 .editprop_mid-container {
     background-color: $brightColor;
-    width: 60%;
     display: flex;
+    width: 100%;
     align-items: center;
     flex-direction: column;
+    margin-right: 200px;
+    margin-left: 200px;
 
     h4 {
         color: $darkColor;
@@ -21,7 +23,9 @@
         font-size: 40px;
         margin-bottom: 30px;
         margin-top: 20px;
-        text-decoration: underline;
+        padding: 10px;
+        width: 400px;
+        border-bottom: 1px solid $darkColor;
     }
 }
 
@@ -50,7 +54,7 @@
     width: 30px;
     margin-left: 470px;
     margin-top: 10px;
-    font-family: $cursiveFont;
+    font-family: $readFont;
     font-size: 20px;
 }
 

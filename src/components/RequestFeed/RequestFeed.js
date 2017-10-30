@@ -10,7 +10,16 @@ class RequestFeed extends Component {
 
     componentDidMount() {
         this.props.getUsersPropsReqs();
+        console.log('hey')
     }
+
+    componentWillReceiveProps(newProps) {
+        console.log(!newProps.user)
+        if (!newProps.user) {
+            this.props.history.push('/')
+        }
+    }
+
 
     render() {
         console.log(this.props.usersPropsReqs)
@@ -20,7 +29,7 @@ class RequestFeed extends Component {
                 <div className='reqfeed_container'>
                     <h1>Requests for Property</h1>
                     <div className='reqfeed_rendered-container'>
-                        {this.props.usersPropsReqs.map((request, i) => <Request key={i} request={request} />)}
+                        {this.props.usersPropsReqs ? this.props.usersPropsReqs.map((request, i) => <Request key={i} request={request} />) : null}
                     </div>
                     {this.props.user.status === 'Tenant' ? <Link to='/addreq' className='reqfeed_new-req'>New Request</Link> : null}
                 </div>

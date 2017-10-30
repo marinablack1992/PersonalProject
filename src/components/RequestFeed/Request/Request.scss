@@ -53,13 +53,6 @@
                 margin-bottom: 25px;
     
             }
-    
-            .req_img {
-                max-width: 200px;
-                max-height: 200px;
-
-    
-            }
         }
 
         .req_reqinfo {
@@ -110,4 +103,13 @@
                 }
             }
         }
+    }
+
+    .req_img {
+        min-width: 200px;
+        min-height: 200px;
+        max-width: 200px;
+        max-height: 200px;
+
+
     }

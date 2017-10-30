@@ -1,15 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Libre+Baskerville|Lobster");
 .addten_container {
   background-color: #FBFBF2;
-  height: 100vh;
+  height: calc(100vh - 75px);
   width: 100%;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  overflow: hidden; }
 
 .addten_mid-container {
   background-color: #CFD2CD;
-  width: 60%;
+  width: 100%;
   display: flex;
+  margin-right: 200px;
+  margin-left: 200px;
   align-items: center;
   flex-direction: column; }
   .addten_mid-container h3 {
@@ -18,7 +21,9 @@
     font-size: 40px;
     margin-bottom: 30px;
     margin-top: 20px;
-    text-decoration: underline; }
+    width: 400px;
+    padding: 10px;
+    border-bottom: 1px solid #847577; }
 
 .addten_link {
   text-decoration: none;
@@ -37,7 +42,7 @@
   width: 30px;
   margin-left: 470px;
   margin-top: 10px;
-  font-family: "Lobster", cursive;
+  font-family: "Libre Baskerville", serif;
   font-size: 20px; }
 
 .addten_title {

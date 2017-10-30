@@ -61,7 +61,7 @@ module.exports = {
         const db = req.app.get('db');
         const { id } = req.params
         const { imageurl, address, monthly_rent, tenant_email, lease_exp } = req.body
-        db.update_property([id, imageurl, address, monthly_rent, tenant_email, lease_exp])
+        db.update_property([id, imageurl, address, monthly_rent, tenant_email, lease_exp, req.user.id])
             .then((data) => res.status(200).send(data))
             .catch((err) => res.status(500).send(err))
     },

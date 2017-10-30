@@ -1,17 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Libre+Baskerville|Lobster");
 .addprop_container {
   background-color: #FBFBF2;
-  height: 100vh;
+  height: calc(100vh - 75px);
   width: 100%;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  overflow: hidden; }
 
 .addprop_mid-container {
   background-color: #CFD2CD;
-  width: 60%;
+  width: 100%;
   display: flex;
   align-items: center;
-  flex-direction: column; }
+  flex-direction: column;
+  margin-right: 200px;
+  margin-left: 200px; }
 
 .addprop_title {
   color: #847577;
@@ -36,7 +39,8 @@
 
 .addprop_btnlink {
   text-decoration: none;
-  color: #847577; }
+  color: #847577;
+  font-family: "Libre Baskerville", serif; }
 
 .addprop_btn {
   background-color: #FBFBF2;
@@ -51,5 +55,5 @@
   width: 30px;
   margin-left: 470px;
   margin-top: 10px;
-  font-family: "Lobster", cursive;
+  font-family: "Libre Baskerville", serif;
   font-size: 20px; }

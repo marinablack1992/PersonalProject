@@ -6,13 +6,16 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    overflow: hidden;
 
 }
 
 .con_mid-container {
     background-color: $brightColor;
-    width: 60%;
+    width: 100%;
     display: flex;
+    margin-right: 200px;
+    margin-left: 200px;
     align-items: center;
     flex-direction: column;
 
@@ -22,7 +25,9 @@
         font-size: 40px;
         margin-bottom: 30px;
         margin-top: 20px;
-        text-decoration: underline;
+        width: 400px;
+        padding: 10px;
+        border-bottom: 1px solid $darkColor; 
 
     }
 
@@ -61,7 +66,7 @@
     width: 30px;
     margin-left: 470px;
     margin-top: 10px;
-    font-family: $cursiveFont;
+    font-family: $readFont;
     font-size: 20px;
 
 }

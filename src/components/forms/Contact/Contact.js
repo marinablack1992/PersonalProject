@@ -40,7 +40,7 @@ class Contact extends Component {
                 <NavBar />
                 <div className='con_container'>
                     <div className='con_mid-container'>
-                        <h5>Contact Preferences</h5>
+                        <h5>Contact Information</h5>
                         <Link className='con_link' to='/check'><button className='con_btn'>x</button></Link>
                         <div className='con_title'>
                             Phone Number <br />

@@ -3,18 +3,22 @@
 
 .addprop_container {
     background-color: $lightColor;
-    height: 100vh;
+    height: calc(100vh - 75px);
     width: 100%;
     display: flex;
     justify-content: center;
+    overflow: hidden;
 }
 
 .addprop_mid-container {
     background-color: $brightColor;
-    width: 60%;
+    width: 100%;
+
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-right: 200px;
+    margin-left: 200px;
     
     }
 
@@ -47,6 +51,7 @@
 .addprop_btnlink {
     text-decoration: none;
     color: $darkColor;
+    font-family: $readFont;
 }
 
 .addprop_btn {
@@ -62,6 +67,6 @@
     width: 30px;
     margin-left: 470px;
     margin-top: 10px;
-    font-family: $cursiveFont;
+    font-family: $readFont;
     font-size: 20px;
 }

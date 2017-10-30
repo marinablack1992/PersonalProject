@@ -38,7 +38,7 @@ class NavBar extends Component {
                 </div>
 
                 <div className={this.state.navbar ? 'sidenav expanded' : 'sidenav'}>
-                    {this.props.user.status == 'Landlord' ? <Link className='sidenav_link' to='/contact'>Edit Contact Preferences</Link> : null}
+                    {this.props.user.status == 'Landlord' ? <Link className='sidenav_link' to='/contact'>Edit Contact Information</Link> : null}
                     {this.props.user.status == 'Landlord' ? <Link className='sidenav_link' to='/addprop'>Add Property</Link> : null}
                     <Link className='sidenav_link' to='/requests'>Manage Requests</Link>
 

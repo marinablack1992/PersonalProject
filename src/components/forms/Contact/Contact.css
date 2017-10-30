@@ -4,12 +4,15 @@
   height: 100vh;
   width: 100%;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  overflow: hidden; }
 
 .con_mid-container {
   background-color: #CFD2CD;
-  width: 60%;
+  width: 100%;
   display: flex;
+  margin-right: 200px;
+  margin-left: 200px;
   align-items: center;
   flex-direction: column; }
   .con_mid-container h5 {
@@ -18,7 +21,9 @@
     font-size: 40px;
     margin-bottom: 30px;
     margin-top: 20px;
-    text-decoration: underline; }
+    width: 400px;
+    padding: 10px;
+    border-bottom: 1px solid #847577; }
 
 .con_title {
   color: #847577;
@@ -48,7 +53,7 @@
   width: 30px;
   margin-left: 470px;
   margin-top: 10px;
-  font-family: "Lobster", cursive;
+  font-family: "Libre Baskerville", serif;
   font-size: 20px; }
 
 .con_drop-menu {

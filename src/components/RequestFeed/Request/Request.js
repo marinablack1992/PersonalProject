@@ -6,7 +6,7 @@ import './Request.css';
 
 class Request extends Component {
     render() {
-        console.log(this.props.request)
+        console.log(this.props.request, this.props.request.requestid)
         return (
             <div className='req_outer-container'>
                 {this.props.user.status == 'Tenant' ? <button className='req_delete' onClick={() => this.props.deleteRequest(this.props.request.requestid)}>x</button> : null}
@@ -14,7 +14,7 @@ class Request extends Component {
 
                     <div className='req_img-address'>
                         <div className='req_data-address'>{this.props.request.address}</div>
-                        <img className='req_img' src='this.props.request.req_img' />
+                        <img className='req_img' src={this.props.request.req_img} />
                     </div>
 
                     <div className='req_reqinfo'>

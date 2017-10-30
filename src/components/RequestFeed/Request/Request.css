@@ -40,9 +40,6 @@
       height: 100px;
       width: 200px;
       margin-bottom: 25px; }
-    .req_container .req_img-address .req_img {
-      max-width: 200px;
-      max-height: 200px; }
   .req_container .req_reqinfo {
     margin: 20px;
     margin-right: 40px;
@@ -73,3 +70,9 @@
         height: 10px;
         padding: 5px;
         margin-top: 10px; }
+
+.req_img {
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 200px;
+  max-height: 200px; }

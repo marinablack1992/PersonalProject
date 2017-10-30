@@ -177,7 +177,7 @@ export function deleteRequest(id) {
     const newReq = axios.delete(`/api/deletereq/${id}`)
     .then(response => {
         console.log('deleterequest', response.data)
-        response.data})
+        return response.data})
     .catch(err => console.log('action: delete request failed', err))
 
     return {
@@ -223,6 +223,7 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, { usersPropsReqs: action.payload })
 
         case DELETE_REQUEST + "_FULFILLED":
+        console.log(action.payload)
             return Object.assign({}, state, {usersPropsReqs: action.payload })
 
         default:

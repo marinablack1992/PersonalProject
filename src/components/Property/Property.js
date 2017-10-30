@@ -62,6 +62,7 @@ class Property extends Component {
 }
 
 function mapStateToProps(state) {
+    console.log('mapstatetoprops', state)
     return {
         userProps: state.userProps,
         user: state.user,
