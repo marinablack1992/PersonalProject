@@ -1,76 +1,72 @@
 @import url("https://fonts.googleapis.com/css?family=Libre+Baskerville|Lobster");
-.property_main {
-  background-color: #E5E6E4;
-  padding: 10px; }
+.property_outer-container {
+  display: flex;
+  justify-content: center; }
 
 .property_container {
-  border-radius: 10px; }
-
-.property_info {
-  background-color: #FBFBF2;
-  width: 1000px;
-  position: relative;
-  left: calc(50% - 500px);
-  height: 225px;
-  font-family: "Libre Baskerville", serif;
-  display: flex;
-  margin-right: 212.5px;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: row;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-bottom: solid 1px #E5E6E4;
-  border-left: solid 1px #E5E6E4;
-  border-right: solid 1px #E5E6E4; }
-  .property_info .property_image {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    left: 12.5px;
-    top: 12.5px;
-    border: solid 2px #E5E6E4;
-    border-radius: 10px; }
-  .property_info .property_columnA {
+  width: 100%;
+  height: 325px;
+  border: 1px solid #847577;
+  margin-right: 40px;
+  margin-left: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px; }
+  .property_container .property_nav {
+    background-color: #FBFBF2;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    margin-left: 237.5px; }
-    .property_info .property_columnA .property_address {
-      margin-bottom: 30px; }
-    .property_info .property_columnA .property_rent {
-      margin-top: 30px; }
-  .property_info .property_columnB {
+    justify-content: left;
+    flex-direction: row;
+    align-items: center;
+    height: 45px;
+    width: 100%; }
+    .property_container .property_nav .property_link {
+      text-decoration: none;
+      color: #A6A2A2;
+      margin-right: 10px;
+      margin-left: 10px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      border: 1px solid #A6A2A2;
+      padding: 5px;
+      border-radius: 5px; }
+  .property_container .property_info {
+    margin: auto;
+    background-color: #CFD2CD;
+    height: calc(100% - 45px);
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    margin-left: 37.5px; }
-    .property_info .property_columnB .property_tenant {
-      margin-bottom: 30px; }
-    .property_info .property_columnB .property_lease {
-      margin-top: 30px; }
-
-.property_nav {
-  position: relative;
-  left: calc(50% - 500px);
-  background-color: #CFD2CD;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  width: 1000px;
-  height: 60px;
-  color: #847577;
-  font-family: "Lobster", cursive;
-  font-size: 20px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-top: solid 1px #E5E6E4;
-  border-left: solid 1px #E5E6E4;
-  border-right: solid 1px #E5E6E4; }
-  .property_nav .property_addtenant {
-    text-decoration: none;
-    color: #847577; }
-  .property_nav .property_edit {
-    text-decoration: none;
-    color: #847577; }
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row; }
+    .property_container .property_info .property_image {
+      max-height: 300px;
+      max-width: 300px; }
+    .property_container .property_info .property_column {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      height: 300px;
+      width: 200px;
+      padding: 10px; }
+      .property_container .property_info .property_column .property_category {
+        align-items: center;
+        margin: 25px;
+        width: 150px; }
+        .property_container .property_info .property_column .property_category h1 {
+          font-size: 20px;
+          letter-spacing: 1px;
+          font-family: "Lobster", cursive;
+          margin-top: 5px;
+          margin-bottom: 5px;
+          border-bottom: 1px solid #847577;
+          width: 150px;
+          padding-bottom: 5px; }
+        .property_container .property_info .property_column .property_category .property_data {
+          font-family: "Libre Baskerville", serif;
+          justify-content: center;
+          flex-wrap: wrap;
+          width: 150px;
+          padding: 5px;
+          word-wrap: break-word; }

@@ -21,12 +21,21 @@ class Dashboard extends Component {
     }
 
     render() {
+        console.log('ldash userprops', this.props.userProps)
         return (
-            <div className='ldash_container'>
+            <div className='ldash_outer-container'>
                 <NavBar />
-                <h1>My Properties</h1>
-                {this.props.userProps.map((property, i) => <Property key={i} property={property} />)}
-            </div >
+                <div className='ldash_container'>
+                    <div className='ldash_mid-container'>
+                        <div className='ldash_header'>
+                            <h1>My Properties</h1>
+                        </div>
+                        <div className='ldash_prop-container'>
+                            {this.props.userProps.map((property, i) => <Property key={i} property={property} />)}
+                        </div>
+                    </div >
+                </div>
+            </div>
         )
     }
 }

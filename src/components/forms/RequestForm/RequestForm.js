@@ -78,7 +78,7 @@ class RequestForm extends Component {
                         </select>
                     </div>
                 </div>
-                <button onClick={() => this.newRequest()}>+</button>
+                <Link to='/requests'><button onClick={() => this.newRequest()}>+</button></Link>
             </div>
         )
     }

@@ -1,82 +1,73 @@
 @import url("https://fonts.googleapis.com/css?family=Libre+Baskerville|Lobster");
 .tdash_outer-container {
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   overflow: hidden; }
 
 .tdash_container {
   background-color: #FBFBF2;
-  height: 100%;
-  width: 100%; }
-
-.tdash_nav {
-  background-color: #E5E6E4;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
-  height: 50px;
-  font-family: "Libre Baskerville", serif;
-  border-top: solid 2px #847577;
-  border-bottom: solid 2px #847577; }
-  .tdash_nav .tdash_links-container {
-    display: flex; }
-    .tdash_nav .tdash_links-container .tdash_link {
-      text-decoration: none;
-      color: #847577;
-      margin-left: 15px;
-      border: solid 1px #847577;
-      padding: 5px;
-      border-radius: 5px;
-      background-color: #FBFBF2; }
-  .tdash_nav .tdash_payrent {
-    margin-right: 15px; }
-
-.tdash_mid-container {
-  display: flex;
-  justify-content: center;
   height: 100%;
-  width: 100%; }
-  .tdash_mid-container .tdash_img-prop {
-    background-color: #CFD2CD;
+  display: flex; }
+  .tdash_container .tdash_mid-container {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-around;
-    width: 1000px;
-    height: 100vh; }
-    .tdash_mid-container .tdash_img-prop .tdash_img {
-      margin: 20px;
-      border: solid 1px #847577;
-      border-radius: 5px;
-      max-width: 500px;
-      max-height: 500px; }
-    .tdash_mid-container .tdash_img-prop .tdash_propertyinfo-container {
-      display: flex;
+    width: 100%;
+    height: calc(100vh - 75px);
+    background-color: #E5E6E4;
+    margin-right: 200px;
+    margin-left: 200px;
+    align-items: row;
+    justify-content: space-around; }
+    .tdash_container .tdash_mid-container .tdash_img-rent-container {
       flex-direction: column;
-      justify-content: space-around; }
-      .tdash_mid-container .tdash_img-prop .tdash_propertyinfo-container .tdash_propertyinfo {
-        margin: 20px;
-        width: 350px;
-        height: 200px;
-        background-color: #847577;
+      font-family: "Libre Baskerville", serif;
+      width: 400px;
+      margin-top: 20px; }
+      .tdash_container .tdash_mid-container .tdash_img-rent-container .tdash_img {
+        border: solid 1px #847577;
+        border-radius: 5px;
+        max-width: 400px;
+        max-height: 400px;
+        margin-bottom: 30px; }
+      .tdash_container .tdash_mid-container .tdash_img-rent-container .tdash_payrent {
+        width: 400px;
+        height: 165px;
+        border: solid 1px #847577;
+        border-radius: 5px;
+        padding: 15px;
+        flex-direction: column;
+        font-family: "Libre Baskerville", serif;
+        font-size: 20px; }
+        .tdash_container .tdash_mid-container .tdash_img-rent-container .tdash_payrent h1 {
+          border-bottom: solid 1px #847577;
+          width: 350px;
+          margin-bottom: 10px;
+          padding: 5px;
+          font-weight: bolder;
+          font-size: 25px; }
+        .tdash_container .tdash_mid-container .tdash_img-rent-container .tdash_payrent .tdash_data {
+          margin-bottom: 30px; }
+    .tdash_container .tdash_mid-container .tdash_propertyinfo-container {
+      font-family: "Libre Baskerville", serif;
+      width: 400px;
+      margin-top: 20px; }
+      .tdash_container .tdash_mid-container .tdash_propertyinfo-container .tdash_column {
         display: flex;
         justify-content: space-around;
-        align-items: center;
+        border: solid 1px #847577;
+        border-radius: 5px;
+        padding: 15px;
+        width: 400px;
         flex-direction: column;
-        border: solid 5px #847577;
-        border-radius: 5px; }
-        .tdash_mid-container .tdash_img-prop .tdash_propertyinfo-container .tdash_propertyinfo .tdash_title {
-          color: #FBFBF2; }
-      .tdash_mid-container .tdash_img-prop .tdash_propertyinfo-container .tdash_landlordinfo {
-        margin: 20px;
-        width: 350px;
-        height: 200px;
-        background-color: #847577;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: column;
-        border: solid 5px #847577;
-        border-radius: 5px; }
-        .tdash_mid-container .tdash_img-prop .tdash_propertyinfo-container .tdash_landlordinfo .tdash_title {
-          color: #FBFBF2; }
+        font-family: "Libre Baskerville", serif;
+        font-size: 15px;
+        height: 500px; }
+        .tdash_container .tdash_mid-container .tdash_propertyinfo-container .tdash_column h1 {
+          width: 350px;
+          margin-bottom: 10px;
+          padding: 5px;
+          font-weight: bolder;
+          font-size: 20px; }
+        .tdash_container .tdash_mid-container .tdash_propertyinfo-container .tdash_column .tdash_data {
+          border-bottom: solid 1px #847577;
+          padding-bottom: 10px; }

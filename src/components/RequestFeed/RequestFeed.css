@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville|Lobster");
+.reqfeed_outer-container {
+  height: 100vh;
+  width: 100%;
+  background-color: #FBFBF2;
+  overflow: hidden; }
+  .reqfeed_outer-container .reqfeed_container {
+    display: flex;
+    height: 100%;
+    margin-right: 200px;
+    margin-left: 200px;
+    background-color: #E5E6E4;
+    align-items: flex-end;
+    flex-direction: column; }
+    .reqfeed_outer-container .reqfeed_container h1 {
+      width: 100%;
+      height: 60px;
+      background-color: #A6A2A2;
+      padding: 20px;
+      font-size: 20px;
+      font-family: "Libre Baskerville", serif; }
+    .reqfeed_outer-container .reqfeed_container .reqfeed_new-req {
+      text-decoration: none;
+      border: 1px solid #847577;
+      border-radius: 5px;
+      color: #847577;
+      padding: 10px;
+      margin: 10px; }
+    .reqfeed_outer-container .reqfeed_container .reqfeed_rendered-container {
+      width: 100%;
+      height: 70%;
+      justify-content: center;
+      border-bottom: 1px solid #847577;
+      border-top: 1px solid #847577;
+      overflow: scroll;
+      background-color: #CFD2CD; }

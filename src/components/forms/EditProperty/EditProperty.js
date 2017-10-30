@@ -57,6 +57,7 @@ class EditProperty extends Component {
     }
 
     render() {
+        console.log(this.props.userProps)
         return (
             <div className='editprop_outer-container'>
                 <NavBar />

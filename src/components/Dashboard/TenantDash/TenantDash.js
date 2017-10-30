@@ -59,36 +59,45 @@ class TenantDash extends Component {
             <div className='tdash_outer-container'>
                 <NavBar />
                 <div className='tdash_container'>
-                    <div className='tdash_nav'>
-                        <div className='tdash_links-container'>
-                            <Link className='tdash_link' to='/requests'>Manage Requests</Link>
-                            <Link className='tdash_link' to='/addreq'>Add Request</Link>
-                        </div>
-                        <div className='tdash_payrent'>
-                            <StripeCheckout
-                                token={this.onToken}
-                                stripeKey={'pk_test_kyHw31cabHGKQCttwntsQTzt'}
-                                amount={this.state.monthlyrent * 100}
-                            />
-                        </div>
-                    </div>
+
                     <div className='tdash_mid-container'>
-                        <div className='tdash_img-prop'>
+
+                        <div className='tdash_img-rent-container'>
                             <img className='tdash_img' src={this.state.imageurl} /> <br />
 
-                            <div className='tdash_propertyinfo-container'>
-                                <div className='tdash_propertyinfo'>
-                                    <div className='tdash_title'>Address: {this.state.address} <br /></div>
-                                    <div className='tdash_title'>Monthly Rent: {this.state.monthlyrent} <br /></div>
-                                    <div className='tdash_title'>Lease Expiration: {this.state.lease} <br /></div>
+                            <div className='tdash_payrent'>
+                                <div className='tdash_title'><h1>Monthly Rent</h1>
+                                    <div className='tdash_data'>{this.state.monthlyrent}</div>
                                 </div>
 
+                                <StripeCheckout
+                                    token={this.onToken}
+                                    stripeKey={'pk_test_kyHw31cabHGKQCttwntsQTzt'}
+                                    amount={this.state.monthlyrent * 100}
+                                />
+                            </div>
+                        </div>
 
-                                <div className='tdash_landlordinfo'>
-                                    <div className='tdash_title'>Landlord: {this.state.landlord} <br /></div>
-                                    <div className='tdash_title'>Email: {this.state.landEmail} <br /></div>
-                                    <div className='tdash_title'>Phone Number: {this.state.landPhone} <br /></div>
-                                    <div className='tdash_title'>Preferred Method Of Contact: {this.state.prefcontact} <br /></div>
+
+                        <div className='tdash_propertyinfo-container'>
+                            <div className='tdash_column'>
+                                <div className='tdash_title'><h1>Address</h1>
+                                    <div className='tdash_data'>{this.state.address}</div>
+                                </div>
+                                <div className='tdash_title'><h1>Lease Expiration</h1>
+                                    <div className='tdash_data'>{this.state.lease}</div>
+                                </div>
+                                <div className='tdash_title'><h1>Landlord</h1>
+                                    <div className='tdash_data'>{this.state.landlord}</div>
+                                </div>
+                                <div className='tdash_title'><h1>Email</h1>
+                                    <div className='tdash_data'>{this.state.landEmail}</div>
+                                </div>
+                                <div className='tdash_title'><h1>Phone Number</h1>
+                                    <div className='tdash_data'>{this.state.landPhone}</div>
+                                </div>
+                                <div className='tdash_title'><h1>Preferred Contact Method</h1>
+                                    <div className='tdash_data'>{this.state.prefcontact}</div>
                                 </div>
                             </div>
                         </div>

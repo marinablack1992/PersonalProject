@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville|Lobster");
+.req_outer-container {
+  display: flex;
+  margin: 20px;
+  margin-right: 100px;
+  margin-left: 100px;
+  height: 350px;
+  flex-direction: column; }
+
+.req_delete {
+  border: solid 1px #847577;
+  color: #847577;
+  text-decoration: none;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  margin-bottom: 10px; }
+
+.req_container {
+  display: flex;
+  height: 300px;
+  width: 100%;
+  border: 1px solid #847577;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row; }
+  .req_container .req_img-address {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    flex-direction: column;
+    margin: 20px;
+    margin-left: 40px; }
+    .req_container .req_img-address .req_data-address {
+      border-bottom: 1px solid #847577;
+      padding: 5px;
+      height: 100px;
+      width: 200px;
+      margin-bottom: 25px; }
+    .req_container .req_img-address .req_img {
+      max-width: 200px;
+      max-height: 200px; }
+  .req_container .req_reqinfo {
+    margin: 20px;
+    margin-right: 40px;
+    height: 250px;
+    width: 400px; }
+    .req_container .req_reqinfo .req_title {
+      border-bottom: 1px solid #847577;
+      padding: 5px; }
+    .req_container .req_reqinfo .req_data-description {
+      border: 1px solid #847577;
+      height: 150px;
+      margin-bottom: 10px;
+      margin-top: 25px;
+      background-color: #FBFBF2;
+      color: black; }
+    .req_container .req_reqinfo .req_priority {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: flex-end;
+      font-size: 25px; }
+      .req_container .req_reqinfo .req_priority .req_title {
+        border: none;
+        height: 10px;
+        padding: 5px;
+        margin-top: 10px; }
+      .req_container .req_reqinfo .req_priority .req_data-priority {
+        height: 10px;
+        padding: 5px;
+        margin-top: 10px; }

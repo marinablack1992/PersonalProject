@@ -44,8 +44,8 @@ export function getUserInfo() {
     }
 }
 
-export function getUserProperties(id) {
-    const userProps = axios.get(`/api/properties`)
+export function getUserProperties() {
+    const userProps = axios.get('/api/properties')
         .then(response => {
             return response.data
         })
@@ -175,7 +175,9 @@ export function deleteProperty(id) {
 
 export function deleteRequest(id) {
     const newReq = axios.delete(`/api/deletereq/${id}`)
-    .then(response => response.data)
+    .then(response => {
+        console.log('deleterequest', response.data)
+        response.data})
     .catch(err => console.log('action: delete request failed', err))
 
     return {
